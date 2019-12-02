@@ -1,0 +1,23 @@
+{
+  "name": "dont_forget_be",
+  "version": "1.0.0",
+  "description": "The backend to a full stack todo list app",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeribertoUroza/Dont_Forget_BE.git"
+  },
+  "author": "Heriberto Uroza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeribertoUroza/Dont_Forget_BE/issues"
+  },
+  "homepage": "https://github.com/HeribertoUroza/Dont_Forget_BE#readme"
+}
