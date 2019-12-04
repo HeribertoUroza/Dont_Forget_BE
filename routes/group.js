@@ -23,7 +23,7 @@ const createGroup = (request, response) => {
 const getGroupbyID = (request, response) => {
     const { group_id } = request.params;
 
-    GroupService.getGroupbyID( group_id )
+    GroupService.getGroupByID( group_id )
         .then( data => {
             response.json({
                 message: 'Success',
