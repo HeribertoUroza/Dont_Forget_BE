@@ -12,7 +12,7 @@ const postReqGroup = ( group_name ) => getDbConnection(dbAddress).oneOrNone(
         VALUES
             ($[group_name])
         RETURNING group_id
-    `
+    `, { group_name }
 );
 
 module.exports = {
