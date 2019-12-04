@@ -13,7 +13,6 @@ const postReqUser = ( full_name, email ) => getDbConnection(dbAddress).oneOrNone
             ($[full_name], $[email])
         RETURNING user_id
     `, { full_name, email }
-
 );
 
 module.exports = {

@@ -24,7 +24,7 @@ const getApp = _=> {
 
     //ROUTERS
     app.use('/user', getUserRouter());
-    
+
 
     return app;
 };
