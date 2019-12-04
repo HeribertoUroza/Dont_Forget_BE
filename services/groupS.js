@@ -15,6 +15,14 @@ const postReqGroup = ( group_name ) => getDbConnection(dbAddress).oneOrNone(
     `, { group_name }
 );
 
+const getGroupByID = ( group_id ) => getDbConnection(dbAddress).any(
+    `
+        SELECT *
+        FROM groups
+        WHERE groups.group_id = $[group_id]
+    `, { group_id }
+);
+
 module.exports = {
     postReqGroup,
 }
