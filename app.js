@@ -5,6 +5,7 @@ const cors = require('cors');
 
 //EXPRESS ROUTERS
 const {getUserRouter} = require('./routes/user');
+const {getGroupRouter} = require('./routes/group')
 
 //FUNCTION THAT RETURNS THE APP
 const getApp = _=> {
@@ -24,7 +25,7 @@ const getApp = _=> {
 
     //ROUTERS
     app.use('/user', getUserRouter());
-
+    app.use('/group', getGroupRouter());
 
     return app;
 };
