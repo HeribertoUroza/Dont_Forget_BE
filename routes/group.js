@@ -18,12 +18,30 @@ const createGroup = (request, response) => {
                 error: error.toString()
             });
         });
-}
+};
+
+const getGroupbyID = (request, response) => {
+    const { group_id } = request.params;
+
+    GroupService.getGroupbyID( group_id )
+        .then( data => {
+            response.json({
+                message: 'Success',
+                data
+            });
+        })
+        .catch( error => {
+            response.json({
+                error: error.toString()
+            });
+        });
+};
 
 const getGroupRouter = _=> {
     const GroupRouter = express.Router();
 
     GroupRouter.post('/', createGroup);
+    GroupRouter.get('/:group_id', getGroupbyID)
 
     return GroupRouter
 };
