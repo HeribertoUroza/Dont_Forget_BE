@@ -15,6 +15,7 @@ const postReqGroup = ( group_name ) => getDbConnection(dbAddress).oneOrNone(
     `, { group_name }
 );
 
+    //GET GROUP BY ID
 const getGroupByID = ( group_id ) => getDbConnection(dbAddress).oneOrNone(
     `
         SELECT *

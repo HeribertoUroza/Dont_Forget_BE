@@ -20,6 +20,7 @@ const createGroup = (request, response) => {
         });
 };
 
+// Get Group By ID
 const getGroupbyID = (request, response) => {
     const { group_id } = request.params;
 
