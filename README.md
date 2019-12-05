@@ -5,5 +5,5 @@
 ### FrontEnd Link - GitHub
 HeribertoUroza/Dont_Forget_FE
 
-### BackEnd Link - GitHub
-HeribertoUroza/Dont_Forget_BE
+### Design Doc
+[Click Here to see.](https://docs.google.com/document/d/1vdchRHteKdxYIdVm2XrUN48xHLqCArDo-oQ4UUKSZdI/edit?usp=sharing)
