@@ -15,6 +15,16 @@ const postReqCategory = ( category_name, group_id ) => getDbConnection(dbAddress
     `, { category_name, group_id }
 );
 
+    //GET ALL CATEGORIES BY GROUP ID
+const getReqCategories = ( group_id ) => getDbConnection(dbAddress).any(
+    `
+        SELECT *
+        FROM categories
+        WHERE categories.group_id = $[group_id]
+    `, { group_id }
+);
+
 module.exports = {
-    postReqCategory
+    postReqCategory,
+    getReqCategories,
 }
