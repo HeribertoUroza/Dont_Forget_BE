@@ -21,10 +21,30 @@ const createListItem = (request, response) => {
         });
 }
 
+//UPDATE LIST_ITEM
+const updateListItem = (request, response) => {
+    const { list_item_name, is_completed } = request.body;
+    const { list_item_id } = request.params;
+
+    ListItemService.putReqListItems(list_item_id, list_item_name, is_completed)
+        .then( data => {
+            response.json({
+                message: 'Success',
+                data
+            });
+        })
+        .catch( error => {
+            response.json({
+                error: error.toString()
+            });
+        });
+}
+
 const getListItemRouter = _=> {
     const ListItemRouter = express.Router();
 
     ListItemRouter.post('/:category_id', createListItem);
+    ListItemRouter.put('/:list_item_id', updateListItem);
 
     return ListItemRouter
 }
