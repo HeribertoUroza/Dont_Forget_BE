@@ -31,7 +31,9 @@ CREATE TABLE list_items
     list_item_name VARCHAR,
     category_id INT NOT NULL,
     is_completed BOOLEAN NOT NULL,
+    is_completed_by INT NOT NULL,
     FOREIGN KEY (category_id) REFERENCES categories(category_id),
+    FOREIGN KEY (is_completed_by) REFERENCES users(user_id),
     createdAt TIMESTAMP DEFAULT NOW() 
 );
 
@@ -59,12 +61,12 @@ VALUES
     ('Laundry List', 3);
 
 INSERT INTO list_items
-    (list_item_name,category_id,is_completed)
+    (list_item_name,category_id,is_completed, is_completed_by)
 VALUES
-    ('Milk', 1, 'FALSE'),
-    ('Eggs', 1, 'TRUE'),
-    ('Shirts', 2, 'FALSE'),
-    ('Pain Reliver', 3, 'FALSE'),
-    ('Mango', 4, 'TRUE'),
-    ('Coffee', 4, 'TRUE'),
-    ('Chocolate', 4, 'FALSE');
+    ('Milk', 1, 'FALSE', 1),
+    ('Eggs', 1, 'TRUE', 2),
+    ('Shirts', 2, 'FALSE', 3),
+    ('Pain Reliver', 3, 'FALSE', 1),
+    ('Mango', 4, 'TRUE', 1),
+    ('Coffee', 4, 'TRUE', 2),
+    ('Chocolate', 4, 'FALSE', 3);
