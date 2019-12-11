@@ -5,14 +5,14 @@ const { dbAddress } = require('./dbConnection/config');
 //LIST ITEMS FUNCTIONS
 
     //CREATE LIST ITEMS
-const postReqListItems = (list_item_name, category_id, is_completed) => getDbConnection(dbAddress).oneOrNone(
+const postReqListItems = (list_item_name, category_id, is_completed, is_completed_by) => getDbConnection(dbAddress).oneOrNone(
     `
         INSERT INTO list_items
-            (list_item_name, category_id, is_completed)
+            (list_item_name, category_id, is_completed, is_completed_by)
         VALUES
-            ($[list_item_name], $[category_id], $[is_completed])
+            ($[list_item_name], $[category_id], $[is_completed], $[is_completed_by])
         RETURNING list_item_id
-    `, { list_item_name, category_id, is_completed}
+    `, { list_item_name, category_id, is_completed, is_completed_by}
 )
 
     //UPDATE LIST ITEM

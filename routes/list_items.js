@@ -5,7 +5,7 @@ const express = require('express');
 //CREATE LIST_ITEM
 const createListItem = (request, response) => {
     const { list_item_name, is_completed } = request.body;
-    const { category_id } = request.params;
+    const { category_id, is_completed_by } = request.params;
 
     ListItemService.postReqListItems( list_item_name, category_id, is_completed)
         .then( data => {
