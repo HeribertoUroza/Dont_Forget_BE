@@ -7,7 +7,7 @@ const createListItem = (request, response) => {
     const { list_item_name, is_completed } = request.body;
     const { category_id, is_completed_by } = request.params;
 
-    ListItemService.postReqListItems( list_item_name, category_id, is_completed)
+    ListItemService.postReqListItems(list_item_name, category_id, is_completed, is_completed_by)
         .then( data => {
             response.json({
                 message: 'Success',
@@ -43,7 +43,7 @@ const updateListItem = (request, response) => {
 const getListItemRouter = _=> {
     const ListItemRouter = express.Router();
 
-    ListItemRouter.post('/:category_id', createListItem);
+    ListItemRouter.post('/:category_id/:is_completed_by', createListItem);
     ListItemRouter.put('/:list_item_id', updateListItem);
 
     return ListItemRouter
